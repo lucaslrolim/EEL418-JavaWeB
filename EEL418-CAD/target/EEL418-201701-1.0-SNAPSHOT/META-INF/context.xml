@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context antiJARLocking="true" path="/EEL418-CAD">
+  <Resource 
+      auth="Container" 
+      driverClassName="org.postgresql.Driver" 
+      logAbandoned="false" 
+      maxActive="200" 
+      maxIdle="100" 
+      maxWait="-1" 
+      name="jdbc/domotica1" 
+      password="123" 
+      removeAbandoned="true" 
+      removeAbandonedTimeout="60" 
+      type="javax.sql.DataSource" 
+      url="jdbc:postgresql://localhost:5432/domotica1" 
+      username="postgres"
+  />
+</Context>
