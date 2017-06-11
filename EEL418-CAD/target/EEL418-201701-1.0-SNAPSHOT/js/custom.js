@@ -5,12 +5,15 @@ function main(){
     document.getElementById('botaoEnviar').addEventListener('click',enviar);
     
 }
-function teste(id){
-    alert(id);
-    $("#" + id).fadeIn('slow');
+function toggleDeviceState (){
+    var image = document.getElementById('myImage');
+    if (image.src.match("bulbon")) {
+        image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+    } else {
+        image.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+    }
 }
 function showModal(id) {
-    alert(id);
     $("#" + id).fadeIn('slow');
 }
 function hideModal(id) {

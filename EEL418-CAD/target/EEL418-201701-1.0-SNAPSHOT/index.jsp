@@ -83,15 +83,22 @@
                         <button id="buttonSelect" name="buttonSelect" class="btn btn-info" onclick="showModal('deviceInfo');">Controlar dispositivo</button>
                          </center>
             </div>
+           
             <div class="selectedDevice" style="display:none" id="deviceInfo">
                 <center>
-                <img src="images/warning.png" />&nbsp;Are you sure you want to delete vessel and the corresponding tanks?
-                <br
-                />
-                <input type="button" value="Cancel" class="hide" onclick="hideModal('delAll1')"
-                />
-                <input type="button" value="Delete" onclick="delVesselAll(1)" id="delete"
-                />
+                    <!-- Device Informations -->
+                    <div>
+                    <img id="myImage" onclick="toggleDeviceState()" src="https://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180">
+                    </div>
+                
+                <!-- Button to Close Modal Window -->
+                <div>
+                    <br></br>
+                    <a href="#" class="btn btn-success" onclick="toggleDeviceState('deviceInfo');">Ligar/Desligar</a>
+                    <br></br>
+                    <a href="#" class="btn btn-danger" onclick="hideModal('deviceInfo');">Fechar dispositivo</a>
+                </div>
+                
                 </center>
             </div>
         </div>
