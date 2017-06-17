@@ -5,17 +5,18 @@ function main(){
     document.getElementById('botaoEnviar').addEventListener('click',enviar);
     
 }
-function toggleDeviceState (){
-    var image = document.getElementById('myImage');
-    if (image.src.match("bulbon")) {
-        image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
-    } else {
-        image.src = "https://www.w3schools.com/js/pic_bulbon.gif";
-    }
-}
+
 function showModal(id) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'js/lampada.js'; 
+    script.onload = function () {
+        fillDeviceModal(); /// TODOS OS DISPOSITIVOS DEVEM TER A FUNÇÃO INICIAR()
+    };
+    document.head.appendChild(script);
     $("#" + id).fadeIn('slow');
 }
+
 function hideModal(id) {
     $("#" + id).fadeOut('slow');
 }
@@ -56,10 +57,10 @@ function fillDevices(objJSONresp){
    while (sel.firstChild) {
         sel.removeChild(sel.firstChild);
    }
-   var opt = document.createElement('option');
-   for(var i = 0; i < objJSONresp["devices"].length; i++) {;
+   for(var i = 0; i < objJSONresp["devices"].length; i++) {
+    var opt = document.createElement('option');
     opt.innerHTML = objJSONresp["devices"][i].name;
-    opt.value = objJSONresp["devices"][i].id;
+    opt.value = objJSONresp["devices"][i].name;
     sel.appendChild(opt);
     }
 }

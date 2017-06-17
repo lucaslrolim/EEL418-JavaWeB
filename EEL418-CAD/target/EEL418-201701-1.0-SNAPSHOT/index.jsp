@@ -62,7 +62,7 @@
 
           <!-- Select Basic -->
           <div class="form-group">
-            <label class="col-md-4 control-label" name="deviceName">Dispositivo</label>
+            <label class="col-md-4 control-label" for="deviceName">Dispositivo</label>
             <div class="col-md-4">
               <select id="selectDevice" name="deviceName" class="form-control">                
               </select>
@@ -86,6 +86,7 @@
            
             <div class="selectedDevice" style="display:none" id="deviceInfo">
                 <center>
+                    <h2 name="HomeName" id="deviceNameModal"></h1>
                     <!-- Device Informations -->
                     <div>
                     <img id="myImage" onclick="toggleDeviceState()" src="https://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180">
@@ -94,9 +95,9 @@
                 <!-- Button to Close Modal Window -->
                 <div>
                     <br></br>
-                    <a href="#" class="btn btn-success" onclick="toggleDeviceState('deviceInfo');">Ligar/Desligar</a>
+                    <a id="on_off" onclick="toggleDeviceState('deviceInfo');"></a>
                     <br></br>
-                    <a href="#" class="btn btn-danger" onclick="hideModal('deviceInfo');">Fechar dispositivo</a>
+                    <a class="btn btn-danger" onclick="hideModal('deviceInfo');">Fechar dispositivo</a>
                 </div>
                 
                 </center>
