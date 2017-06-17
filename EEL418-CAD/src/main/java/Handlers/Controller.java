@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Models.Room;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringReader;
@@ -73,8 +75,8 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
      }
      
      if(typeOfRequest == 2){
-         dto.setTypeoOfRequest(typeOfRequest);
-         String roomId = jsonObjectDeJava.getString("roomId");
+        dto.setTypeoOfRequest(typeOfRequest);
+        String roomId = jsonObjectDeJava.getString("roomId");
         // Devices Names
         List devices = new databaseDAO().doReadDevices();
         dto.addMultipleDevices(devices);
@@ -82,8 +84,8 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         System.out.println("Preencheu devices");
      }
      if(typeOfRequest == 3){
-         String newHomeName = jsonObjectDeJava.getString("homeName");
-                 boolean e;
+        String newHomeName = jsonObjectDeJava.getString("homeName");
+        boolean e;
         e = (new databaseDAO()).doUpdateHome(newHomeName);
         if(e){
             System.out.println("Success on edition");
@@ -91,6 +93,13 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         else{
             System.out.println("Fail on edition");
         }
+     }
+     if(typeOfRequest == 4){
+       System.out.println("entrei");
+       String newStatus = jsonObjectDeJava.getString("status");
+       ObjectMapper mapper = new ObjectMapper();
+       JsonObject root = mapper.readValue(new File("json/lampada.json"), JsonObject.class);
+       System.out.println(root);
      }
 
      response.setContentType("application/json;charset=UTF-8");

@@ -1,6 +1,6 @@
 function fillDeviceModal(){
     var deviceName = "lampada";
-//  var deviceName = document.getElementsByName('deviceName')[0].value;
+   // var deviceName = document.getElementsByName('deviceName')[0].value;
     document.getElementById("deviceNameModal").innerHTML = deviceName;
     var file = "json/"+deviceName+".json"
     $.getJSON(file, function(json) {
@@ -18,18 +18,20 @@ function fillDeviceModal(){
 
 function toggleDeviceState (){
     var image = document.getElementById('myImage');
-    if (image.src.match("bulbon")) {
-        image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
-    } else {
-        image.src = "https://www.w3schools.com/js/pic_bulbon.gif";
-    }
     var status = document.getElementById('on_off').innerHTML;
-    if(status == "Ligar"){
+    if(status == "Desligar"){
+    	var status = "on";
+    	image.src = "https://www.w3schools.com/js/pic_bulbon.gif"
         document.getElementById("on_off").innerHTML = "Desligar";
         document.getElementById("on_off").className='btn btn-warning';
     }
     else{
+    	var status = "off";
+    	image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
         document.getElementById("on_off").innerHTML = "Ligar";
         document.getElementById("on_off").className='btn btn-success';
     }
+    var sendData = {'typeOfRequest':'4',
+                    'status':status};  
+    fazerPedidoAJAX(sendData,fillInitialFields);                      
 }
