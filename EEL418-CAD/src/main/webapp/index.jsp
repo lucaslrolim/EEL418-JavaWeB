@@ -88,8 +88,8 @@
                 <center>
                     <h2 name="HomeName" id="deviceNameModal"></h1>
                     <!-- Device Informations -->
-                    <div>
-                    <img id="myImage" onclick="toggleDeviceState()" src="https://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180">
+                    <div id="deviceImageModal">
+                    <img id="myImage" onclick="toggleDeviceState()" src="images/no-image.png" width="100" height="180">
                     </div>
                 
                 <!-- Button to Close Modal Window -->

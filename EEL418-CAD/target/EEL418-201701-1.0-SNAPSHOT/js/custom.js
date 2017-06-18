@@ -41,6 +41,9 @@ function changeHomeName(){
     fazerPedidoAJAX(sendData,fillInitialFields);
 };
 
+function debug(objJSONresp){
+    console.log(objJSONresp);
+}
 
 function fillInitialFields(objJSONresp){
    var sel = document.getElementById('selectRoom');

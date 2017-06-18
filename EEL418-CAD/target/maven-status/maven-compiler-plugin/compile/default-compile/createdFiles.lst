@@ -1,2 +1,9 @@
+Handlers/IniciadorDeSessao.class
+Models/Cliente.class
+postgreConnection/databaseDAO.class
+Handlers/Controller.class
 Models/Room.class
+Handlers/Handler.class
 Models/Device.class
+postgreConnection/BaseDAO.class
+postgreConnection/ParametrosDTO.class

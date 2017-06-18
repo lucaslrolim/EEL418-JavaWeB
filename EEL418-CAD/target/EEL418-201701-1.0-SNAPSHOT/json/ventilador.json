@@ -1,0 +1,5 @@
+{
+"name":"John",
+"status":"on",
+"cars":[ "Ford", "BMW", "Fiat" ]
+}

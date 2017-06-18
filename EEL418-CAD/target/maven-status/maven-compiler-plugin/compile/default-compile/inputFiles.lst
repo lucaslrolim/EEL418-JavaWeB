@@ -1,8 +1,9 @@
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/Handlers/Handler.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/Handlers/Controller.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/Models/Cliente.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/postgreConnection/BaseDAO.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/postgreConnection/ParametrosDTO.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/Models/Device.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/postgreConnection/databaseDAO.java
-/home/lucas/Downloads/EEL418-JavaWeB/EEL418-CAD/src/main/java/Models/Room.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/Handlers/IniciadorDeSessao.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/Handlers/Handler.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/Models/Room.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/postgreConnection/ParametrosDTO.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/Models/Device.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/postgreConnection/BaseDAO.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/postgreConnection/databaseDAO.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/Handlers/Controller.java
+/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/java/Models/Cliente.java

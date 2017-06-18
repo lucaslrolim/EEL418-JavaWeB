@@ -16,6 +16,8 @@ import Models.Room;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringReader;
@@ -26,6 +28,9 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.servlet.RequestDispatcher;
+import jdk.nashorn.internal.parser.JSONParser;
+import junit.framework.Test;
+import org.json.simple.JSONObject;
 import postgreConnection.BaseDAO;
 import postgreConnection.ParametrosDTO;
 import postgreConnection.databaseDAO;
@@ -95,11 +100,14 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         }
      }
      if(typeOfRequest == 4){
-       System.out.println("entrei");
        String newStatus = jsonObjectDeJava.getString("status");
        ObjectMapper mapper = new ObjectMapper();
-       JsonObject root = mapper.readValue(new File("json/lampada.json"), JsonObject.class);
-       System.out.println(root);
+       JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/lampada.json"), JSONObject.class);
+       root.put("name","Lucas");
+       try (FileWriter file = new FileWriter("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/lampada.json")) {
+        file.write(root.toString());
+        System.out.println("Successfully updated json object to file...!!");
+        }
      }
 
      response.setContentType("application/json;charset=UTF-8");

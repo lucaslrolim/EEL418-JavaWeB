@@ -1,5 +1,6 @@
 function fillDeviceModal(){
     var deviceName = "lampada";
+    var image = document.getElementById('myImage');
    // var deviceName = document.getElementsByName('deviceName')[0].value;
     document.getElementById("deviceNameModal").innerHTML = deviceName;
     var file = "json/"+deviceName+".json"
@@ -7,9 +8,10 @@ function fillDeviceModal(){
         if(json.status === "on"){
             document.getElementById("on_off").innerHTML = "Desligar";
             document.getElementById("on_off").className='btn btn-warning';
+            image.src = "images/pic_bulbon.gif";
         }
         else{
-            alert("2");
+            image.src = "images/pic_bulboff.gif";
             document.getElementById("on_off").innerHTML = "Ligar";
             document.getElementById("on_off").className='btn btn-success';
         }
@@ -17,21 +19,24 @@ function fillDeviceModal(){
 }
 
 function toggleDeviceState (){
+    console.log("status changed");
     var image = document.getElementById('myImage');
     var status = document.getElementById('on_off').innerHTML;
-    if(status == "Desligar"){
+    if(status == "Ligar"){
+        console.log("Entrei no 1")
     	var status = "on";
-    	image.src = "https://www.w3schools.com/js/pic_bulbon.gif"
+    	image.src = "images/pic_bulbon.gif"
         document.getElementById("on_off").innerHTML = "Desligar";
         document.getElementById("on_off").className='btn btn-warning';
     }
     else{
+        console.log("Entrei no 2")
     	var status = "off";
-    	image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+    	image.src = "images/pic_bulboff.gif";
         document.getElementById("on_off").innerHTML = "Ligar";
         document.getElementById("on_off").className='btn btn-success';
     }
     var sendData = {'typeOfRequest':'4',
-                    'status':status};  
-    fazerPedidoAJAX(sendData,fillInitialFields);                      
+                    'status':"oi"};  
+    fazerPedidoAJAX(sendData,debug);                      
 }
