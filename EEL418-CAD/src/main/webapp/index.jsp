@@ -41,8 +41,6 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="/EEL418-CAD/">Minha casa <span class="sr-only">(current)</span></a></li>
-                <li><a href="/EEL418-CAD/rooms.jsp">Meus ambientes</a></li>
-                <li><a href="/EEL418-CAD/devices.jsp">Meus dispositivos</a></li>
             </ul>
         </div>
 

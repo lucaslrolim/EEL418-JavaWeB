@@ -28,6 +28,8 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import jdk.nashorn.internal.parser.JSONParser;
 import junit.framework.Test;
 import org.json.simple.JSONObject;
@@ -99,14 +101,17 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             System.out.println("Fail on edition");
         }
      }
+    ServletConfig conf = getServletConfig();
+    ServletContext context = conf.getServletContext();
+     String path = "/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"; 
      if(typeOfRequest == 4){
        String newStatus = jsonObjectDeJava.getString("status");
        String fileName = jsonObjectDeJava.getString("fileName");
+       System.out.println(System.getProperty("user.dir"));
        ObjectMapper mapper = new ObjectMapper();
-       //JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/"+fileName+".json"), JSONObject.class);
-       JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"+fileName+".json"), JSONObject.class);
+       JSONObject root = mapper.readValue(new File(path+fileName+".json"), JSONObject.class);
        root.put("status",newStatus);
-       try (FileWriter file = new FileWriter("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"+fileName+".json")) {
+       try (FileWriter file = new FileWriter(path+fileName+".json")) {
         file.write(root.toString());
         System.out.println("Successfully updated json object to file...!!");
         }
@@ -116,9 +121,9 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
        String fileName = jsonObjectDeJava.getString("fileName");
        ObjectMapper mapper = new ObjectMapper();
        //JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/"+fileName+".json"), JSONObject.class);
-       JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"+fileName+".json"), JSONObject.class);
+       JSONObject root = mapper.readValue(new File(path+fileName+".json"), JSONObject.class);
        root.put("sound",sound );
-       try (FileWriter file = new FileWriter("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"+fileName+".json")) {
+       try (FileWriter file = new FileWriter(path+fileName+".json")) {
         file.write(root.toString());
         System.out.println("Successfully updated json object to file...!!");
         }
@@ -128,9 +133,9 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
        String fileName = jsonObjectDeJava.getString("fileName");
        ObjectMapper mapper = new ObjectMapper();
        //JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/"+fileName+".json"), JSONObject.class);
-       JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"+fileName+".json"), JSONObject.class);
+       JSONObject root = mapper.readValue(new File(path+fileName+".json"), JSONObject.class);
        root.put("ventilar",ventilar);
-       try (FileWriter file = new FileWriter("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/webapp/json/"+fileName+".json")) {
+       try (FileWriter file = new FileWriter(path+fileName+".json")) {
         file.write(root.toString());
         System.out.println("Successfully updated json object to file...!!");
         }
