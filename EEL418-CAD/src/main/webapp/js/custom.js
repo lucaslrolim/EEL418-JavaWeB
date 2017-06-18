@@ -20,6 +20,10 @@ function showModal(id) {
 }
 
 function hideModal(id) {
+   var sel = document.getElementById('buttons');
+   while (sel.firstChild) {
+        sel.removeChild(sel.firstChild);
+   }
     $("#" + id).fadeOut('slow');
 }
 

@@ -2,10 +2,11 @@ function fillDeviceModal(){
     var deviceName = document.getElementsByName('deviceName')[0].value;
     var image = document.getElementById('myImage');
    // var deviceName = document.getElementsByName('deviceName')[0].value;
-    document.getElementById("deviceNameModal").innerHTML = deviceName;
+    document.getElementById("deviceNameModal").innerHTML = "Luz teto";
     var file = "json/"+deviceName+".json"
     $.getJSON(file, function(json) {
-        if(json.status === "on"){
+    	console.log(json.status );
+        if(json.status == "on"){
             document.getElementById("on_off").innerHTML = "Desligar";
             document.getElementById("on_off").className='btn btn-warning';
             image.src = "images/pic_bulbon.gif";
@@ -24,14 +25,12 @@ function toggleDeviceState (){
     var image = document.getElementById('myImage');
     var status = document.getElementById('on_off').innerHTML;
     if(status == "Ligar"){
-        console.log("Entrei no 1")
     	var status = "on";
     	image.src = "images/pic_bulbon.gif"
         document.getElementById("on_off").innerHTML = "Desligar";
         document.getElementById("on_off").className='btn btn-warning';
     }
     else{
-        console.log("Entrei no 2")
     	var status = "off";
     	image.src = "images/pic_bulboff.gif";
         document.getElementById("on_off").innerHTML = "Ligar";
