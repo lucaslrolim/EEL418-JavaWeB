@@ -31,7 +31,6 @@ public class databaseDAO extends BaseDAO {
         };
         return homeName;
     }
-
        public List doReadRooms() {
         List<Room> rooms = new ArrayList<Room>();
         try {
@@ -65,6 +64,7 @@ public class databaseDAO extends BaseDAO {
                 d.setId(rst.getString("serialdispositivo"));
                 d.setrId(rst.getString("serialambientes"));
                 d.setName(rst.getString("nome"));
+                d.setFileName(rst.getString("FileName"));
                 devices.add(d);
             }
             con.close();

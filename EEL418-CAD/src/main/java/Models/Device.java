@@ -13,6 +13,7 @@ public class Device {
     private String name;
     private String id;
     private String rId;
+    private String fileName;
     public String getName(){
         return name;
     }
@@ -30,5 +31,11 @@ public class Device {
     }
     public void setrId(String rId){
         this.rId = rId;
+    }
+    public String getFileName(){
+        return fileName;
+    }
+    public void setFileName(String fileName){
+        this.fileName = fileName;
     }
 }

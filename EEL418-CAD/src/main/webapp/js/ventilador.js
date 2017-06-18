@@ -1,7 +1,8 @@
 function fillDeviceModal(){
-    var deviceName = "ventilador";
+    var deviceName = document.getElementsByName('deviceName')[0].value;
+    var image = document.getElementById('myImage')
    // var deviceName = document.getElementsByName('deviceName')[0].value;
-    document.getElementById("deviceNameModal").innerHTML = deviceName;
+    document.getElementById("deviceNameModal").innerHTML = "Luz teto";
     var file = "json/"+deviceName+".json"
     $.getJSON(file, function(json) {
         if(json.status === "on"){
@@ -18,6 +19,7 @@ function fillDeviceModal(){
 }
 
 function toggleDeviceState (){
+	var fileName = document.getElementsByName('deviceName')[0].value;
     console.log("status changed");
     var image = document.getElementById('myImage');
     var status = document.getElementById('on_off').innerHTML;
@@ -34,6 +36,7 @@ function toggleDeviceState (){
         document.getElementById("on_off").className='btn btn-success';
     }
     var sendData = {'typeOfRequest':'4',
-                    'status':"oi"};  
+                    'status':status,
+                	'fileName':fileName};  
     fazerPedidoAJAX(sendData,debug);                      
 }

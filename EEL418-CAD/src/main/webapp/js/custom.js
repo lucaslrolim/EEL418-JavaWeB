@@ -7,9 +7,11 @@ function main(){
 }
 
 function showModal(id) {
+    var fileName = document.getElementsByName('deviceName')[0].value;
+    console.log(fileName);
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'js/lampada.js'; 
+    script.src = 'js/'+fileName+'.js'; 
     script.onload = function () {
         fillDeviceModal(); /// TODOS OS DISPOSITIVOS DEVEM TER A FUNÇÃO INICIAR()
     };
@@ -63,7 +65,7 @@ function fillDevices(objJSONresp){
    for(var i = 0; i < objJSONresp["devices"].length; i++) {
     var opt = document.createElement('option');
     opt.innerHTML = objJSONresp["devices"][i].name;
-    opt.value = objJSONresp["devices"][i].name;
+    opt.value = objJSONresp["devices"][i].FileName;
     sel.appendChild(opt);
     }
 }

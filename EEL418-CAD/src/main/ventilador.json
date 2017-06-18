@@ -1,5 +1,1 @@
-{
-"name":"John",
-"status":"on",
-"cars":[ "Ford", "BMW", "Fiat" ]
-}
+{"direcao_vento":"cima","velocidade":"alta","status":"off"}

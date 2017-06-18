@@ -101,10 +101,11 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
      }
      if(typeOfRequest == 4){
        String newStatus = jsonObjectDeJava.getString("status");
+       String fileName = jsonObjectDeJava.getString("fileName");
        ObjectMapper mapper = new ObjectMapper();
-       JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/lampada.json"), JSONObject.class);
-       root.put("name","Lucas");
-       try (FileWriter file = new FileWriter("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/lampada.json")) {
+       JSONObject root = mapper.readValue(new File("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/"+fileName+".json"), JSONObject.class);
+       root.put("status",newStatus);
+       try (FileWriter file = new FileWriter("/home/lucas/repositoriosGit/EEL418-JavaWeB/EEL418-CAD/src/main/"+fileName+".json")) {
         file.write(root.toString());
         System.out.println("Successfully updated json object to file...!!");
         }

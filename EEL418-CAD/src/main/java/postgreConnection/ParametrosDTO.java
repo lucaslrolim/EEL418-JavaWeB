@@ -117,6 +117,7 @@ public class ParametrosDTO implements Serializable{
                 jo.add("id",devices.get(i).getId());
                 jo.add("name",devices.get(i).getName());
                 jo.add("associateRoom",devices.get(i).getrId());
+                jo.add("FileName",devices.get(i).getFileName());
                 devicesArray.add(jo);
             }
             returnJson.add("devices",devicesArray);
@@ -127,12 +128,13 @@ public class ParametrosDTO implements Serializable{
                 JsonObjectBuilder jo = Json.createObjectBuilder();
                 jo.add("id",roomDevices.get(i).getId());
                 jo.add("name",roomDevices.get(i).getName());
+                jo.add("FileName",devices.get(i).getFileName());
                 devicesArray.add(jo);
             }
             returnJson.add("devices",devicesArray);           
         }
         
-        System.out.println(returnJson.build());
+//        System.out.println(returnJson.build());
         return returnJson.build();
     }
 

@@ -52,7 +52,7 @@
         <form class="form-horizontal" role="form">
           <!-- Select Basic -->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="roomName">Ambiente</label>
+            <label class="col-md-4 control-label">Ambiente</label>
             <div class="col-md-4">
               <select id="selectRoom" name="roomName" class="form-control" onchange="populateDevices()">
                 <option value="" disabled selected>Selecione um ambiente</option>
@@ -62,14 +62,14 @@
 
           <!-- Select Basic -->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="deviceName">Dispositivo</label>
+            <label class="col-md-4 control-label">Dispositivo</label>
             <div class="col-md-4">
               <select id="selectDevice" name="deviceName" class="form-control">                
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-4 control-label" name="deviceName">Alterar nome da casa</label> 
+            <label class="col-md-4 control-label">Alterar nome da casa</label> 
             <div class="col-md-4">
                 <input type="text" placeholder="Novo nome" class="form-control" name="newHomeName">
                 <br>
