@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monitoramento de CO2</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Sistema de monitoramento de CO2" content="">
+        <meta name="Lucas Rolim" content="">
+        
+        <link rel="stylesheet" type="text/css" href="css/custom.css" /> 
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+        
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/websocket_simples.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">                
+                <div class="col-md-6 col-md-offset-3" id="rcorners">
+                    <div class="form-group" style="text-align: center">
+                        <h1><b>Monitoramento de CO2<b/><h1>
+                        <b><h3 id="CO2Danger" style="text-align: center; display: none;color: red">PERIGO! Nível de CO2 elevado!</h3></b>
+                    </div>
+                    
+                    <div>
+                        <center><img id="alarmPic" src="images/alarmOFF.png"></center>
+                    </div>
+                    <div class="row" style="margin-top: 40px; text-align: center">
+                         Ligar/Desligar alarme
+                         <br>
+                        <button type="button" class="btn btn-success btn-lg btn3d" onclick="ativarAlarme()"><span class="glyphicon glyphicon-play-circle" ></span></button>
+                        <button type="button" class="btn btn-danger btn-lg btn3d"  onclick="desativarAlarme()"><span class="glyphicon glyphicon-off"></span></button>
+                    </div>
+                    <div class="row" style="margin-top: 10px; text-align: center">
+                        <h3 id="alarmStatus" style="text-align: center; color: green"> Alarme Ligado</h3>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>
